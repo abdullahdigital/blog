@@ -10,8 +10,23 @@
       }
     ],
     "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" }, 
+      { "src": "/static/(.*)", "dest": "/static/$1" },
       { "src": "/(.*)", "dest": "icoder/wsgi.py" }
-    ]
+    ],
+    "build": {
+      "env": {
+        "DJANGO_COLLECTSTATIC": "true"
+      },
+      "steps": [
+        {
+          "name": "Install dependencies",
+          "run": "pip install -r requirements.txt"
+        },
+        {
+          "name": "Collect static files",
+          "run": "python manage.py collectstatic --noinput"
+        }
+      ]
+    }
   }
   

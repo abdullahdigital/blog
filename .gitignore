@@ -1,0 +1,78 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+
+# Ignore source static files but not collected static files
+static/
+!static/img/logo7.png  # Ensure this file is not ignored
+!staticfiles/
+
+# Media files
+media/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Pyenv
+.python-version
+
+# Environments
+.env
+.env.*
+.vscode/
+
+# MySQL
+*.sql
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# Vercel specific
+.vercel/
+.vercel_build_output/
+
+# SQLite database
+*.sqlite3
+
+# MacOS specific
+.DS_Store
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs and databases
+*.log
+*.db
+*.sqlite3
