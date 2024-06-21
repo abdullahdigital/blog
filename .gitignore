@@ -26,8 +26,9 @@ local_settings.py
 
 # Ignore source static files but not collected static files
 static/
-!static/img/logo7.png  # Ensure this file is not ignored
-!staticfiles/
+
+# Ignore collected static files
+staticfiles/
 
 # Media files
 media/
