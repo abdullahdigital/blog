@@ -90,11 +90,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # Specify a writable directory
         'OPTIONS': {
             'timeout': 30,
             'check_same_thread': False,
-            'read': '/tmp',  # Example writable directory on Unix-like systems
+            'read': os.getenv('DB_READ_PATH', '/tmp'),  # Example writable directory
+            'write': os.getenv('DB_WRITE_PATH', '/tmp'),  # Example writable directory
         },
     },
 }
