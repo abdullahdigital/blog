@@ -143,6 +143,10 @@ MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
 
+# Static files configuration for production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 #TinyMce
 # TinyMCE settings
 TINYMCE_DEFAULT_CONFIG = {
