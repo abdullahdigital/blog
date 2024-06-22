@@ -1,34 +1,13 @@
 {
-    "builds": [
+  "builds": [{
+      "src": "icoder/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+  }],
+  "routes": [
       {
-        "src": "icoder/wsgi.py",
-        "use": "@vercel/python",
-        "config": {
-          "maxLambdaSize": "15mb",
-          "runtime": "python3.9"
-        }
+          "src": "/(.*)",
+          "dest": "icoder/wsgi.py"
       }
-    ],
-    "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/media/(.*)", "dest": "/media/$1" },
-      { "src": "/(.*)", "dest": "icoder/wsgi.py" }
-    ],
-    "build": {
-      "env": {
-        "DJANGO_COLLECTSTATIC": "true"
-      },
-      "steps": [
-        {
-          "name": "Install dependencies",
-          "run": "pip install -r requirements.txt"
-        },
-        {
-          "name": "Collect static files",
-          "run": "python manage.py collectstatic --noinput"
-        }
-      ]
-    },
-    "outputDirectory": "staticfiles_build"
-  }
-  
+  ]
+}
