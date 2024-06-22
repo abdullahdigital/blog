@@ -28,6 +28,7 @@
           "run": "python manage.py collectstatic --noinput"
         }
       ]
-    }
+    },
+    "outputDirectory": "staticfiles_build"
   }
   
