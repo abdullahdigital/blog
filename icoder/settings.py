@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-from whitenoise.middleware import WhiteNoiseMiddleware
 
 from django.contrib.messages import constants as messages
 
@@ -45,12 +44,10 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'django.contrib.humanize',
     'tinymce',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -162,8 +159,6 @@ MESSAGE_TAGS = {
     messages.ERROR:'danger'
 }
 
-# Static files configuration for production
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #TinyMce
