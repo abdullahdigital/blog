@@ -18,7 +18,7 @@
   ],
   "functions": {
     "api/*.py": {
-      "includeFiles": ["db.sqlite3"]
+      "includeFiles": "db.sqlite3"
     }
   }
 }
