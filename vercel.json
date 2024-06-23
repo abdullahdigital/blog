@@ -1,13 +1,24 @@
-{ 
-"builds": [{
-  "src": "icoder/wsgi.py",
-  "use": "@vercel/python",
-  "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-}],
-"routes": [
-  {
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "icoder/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9"
+      }
+    }
+  ],
+  "routes": [
+    {
       "src": "/(.*)",
       "dest": "icoder/wsgi.py"
+    }
+  ],
+  "functions": {
+    "api/*.py": {
+      "includeFiles": ["db.sqlite3"]
+    }
   }
-]
 }
